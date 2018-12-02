@@ -2,14 +2,15 @@
 
 import sys
 
+
 def checkpair(a, b):
     same = map(lambda x: x[0] != x[1], zip(a, b))
 
     if sum(same) == 1:
         return ''.join([x[0] for x in zip(a, b, same) if not x[2]])
 
-words = open('input').read().splitlines()
 
+words = open('input').read().splitlines()
 for w1 in words:
     for w2 in words:
         foo = checkpair(w1, w2)
@@ -18,4 +19,3 @@ for w1 in words:
             print w2
             print foo
             sys.exit(0)
-# print checkpair(words[0], words[1])
